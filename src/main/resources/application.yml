@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: api-fintech
+
+  datasource:
+    # createDatabaseIfNotExist=true hace que la base se cree sola la primera vez.
+    url: "jdbc:mysql://localhost:3306/api_fintech?createDatabaseIfNotExist=true"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+
+  jpa:
+    hibernate:
+      # update: Hibernate crea o actualiza las tablas segun las entidades.
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  jackson:
+    serialization:
+      indent-output: true
+
+# Documentacion Swagger / OpenAPI:
+#   Interfaz grafica: http://localhost:8080/swagger-ui/index.html
+#   JSON OpenAPI:     http://localhost:8080/v3/api-docs
+springdoc:
+  swagger-ui:
+    path: /swagger-ui/index.html
